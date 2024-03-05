@@ -1,0 +1,7 @@
+\beamer@sectionintoc {1}{简介}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{研究背景}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{研究目标}{4}{0}{1}
+\beamer@sectionintoc {2}{研究方法}{5}{0}{2}
+\beamer@sectionintoc {3}{应用与结果分析}{9}{0}{3}
+\beamer@sectionintoc {4}{总结与期望}{11}{0}{4}
+\beamer@sectionintoc {5}{参考文献}{13}{0}{5}

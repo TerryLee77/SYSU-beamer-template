@@ -1,0 +1,255 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass[
+10pt,
+aspectratio=169,
+]{beamer}
+\setbeamercovered{transparent=10}
+\usetheme[
+%  showheader,
+%  red,
+  purple,
+%  gray,
+%  graytitle,
+  colorblocks,
+%  noframetitlerule,
+]{Verona}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mac上使用如下命令声明隶书字体，windows也有相关方式，大家可自行修改
+\providecommand{\lishu}{\CJKfamily{zhli}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usetikzlibrary{fadings}
+%
+%\setbeamertemplate{sections/subsections in toc}[ball]
+\usepackage{xeCJK}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{subcaption}
+\usefonttheme{professionalfonts}
+\def\mathfamilydefault{\rmdefault}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{bm}
+\usepackage{algorithm2e}
+\usepackage{listings} 
+\setbeamertemplate{section in toc}{\hspace*{1em}\inserttocsectionnumber.~\inserttocsection\par}
+\setbeamertemplate{subsection in toc}{\hspace*{2em}\inserttocsectionnumber.\inserttocsubsectionnumber.~\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\small}
+\AtBeginSection[]{%
+	\begin{frame}%
+		\frametitle{Outline}%
+		\textbf{\tableofcontents[currentsection]} %
+	\end{frame}%
+}
+
+%\AtBeginSubsection[]{%
+%	\begin{frame}%
+%		\frametitle{Outline}%
+%		\textbf{\tableofcontents[currentsection, currentsubsection]} %
+%	\end{frame}%
+%}
+
+\title{大标题}
+\subtitle{副标题}
+\author[Terry]{姓名}
+\mail{\url{邮箱地址}}
+\institute[SUN YAT-SEN UNIVERSITY]{指导老师：\\XX学院\\
+中山大学}
+\date{\today}
+\titlegraphic[width=3cm]{sysu_big_logo}{}
+
+
+% 配置 listings 包的一些基本样式
+\lstset{
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{blue},
+	stringstyle=\color{red},
+	commentstyle=\color{green},
+	morecomment=[l][\color{magenta}]{\#},
+	frame=single,
+	breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ----------- 标题页 ------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+\maketitle
+
+%%% define code
+%\defverbatim[colored]\lstI{
+%	\begin{lstlisting}[language=C++,basicstyle=\ttfamily,keywordstyle=\color{red}]
+%	int main() {
+%	// Define variables at the beginning
+%	// of the block, as in C:
+%	CStash intStash, stringStash;
+%	int i;
+%	char* cp;
+%	ifstream in;
+%	string line;
+%	[...]
+%	\end{lstlisting}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ----------- FRAME ------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{简介}
+\subsection{研究背景}
+\begin{frame}[c]{简介}
+	\framesubtitle{研究背景}
+\begin{block}{研究背景及场景}
+\begin{itemize}
+	\item ABC
+\end{itemize}
+\end{block}
+
+\begin{block}{研究现状}
+	\begin{itemize}
+	\item 123456
+	\end{itemize}
+\end{block}
+
+%\begin{exampleblock}{Example Block}
+%	Content of an example block
+%\end{exampleblock}
+%
+%\begin{alertblock}{Alert block}
+%	Content of an alert block
+%\end{alertblock}
+
+\end{frame}	
+
+\subsection{研究目标}
+\begin{frame}[c]{简介}
+	\framesubtitle{研究目标}
+	\begin{block}{研究目标}
+		\begin{enumerate}
+			\item ABC
+		\end{enumerate}
+	\end{block}
+	
+	\begin{alertblock}{挑战}
+		数据不平衡
+	\end{alertblock}
+		%\begin{exampleblock}{Example Block}
+	%	Content of an example block
+	%\end{exampleblock}
+	%
+	%\begin{alertblock}{Alert block}
+	%	Content of an alert block
+	%\end{alertblock}
+	
+\end{frame}	
+
+\section{研究方法}
+
+
+
+\begin{frame}{研究方法}
+	\framesubtitle{模型}
+	\begin{equation*}
+		J(\theta) = \mathbb{E}_{\pi_\theta}[G_t] = \sum_{s\in\mathcal{S}} d^\pi (s)V^\pi(s)=\sum_{s\in\mathcal{S}} d^\pi(s)\sum_{a\in\mathcal{A}}\pi_\theta(a|s)Q^\pi(s,a)
+	\end{equation*}
+	
+	\begin{align}
+		Q_\mathrm{target}&=r+\gamma Q^\pi(s^\prime, \pi_\theta(s^\prime)+\epsilon)\\
+		\epsilon&\sim\mathrm{clip}(\mathcal{N}(0, \sigma), -c, c)\nonumber
+	\end{align}
+\end{frame}
+
+\begin{frame}{模型}
+	\begin{alertblock}{编号多行公式}
+		% Taken from Mathmode.tex
+		\begin{multline}
+			A=\lim_{n\rightarrow\infty}\Delta x\left(a^{2}+\left(a^{2}+2a\Delta x+\left(\Delta x\right)^{2}\right)\right.\label{eq:reset}\\
+			+\left(a^{2}+2\cdot2a\Delta x+2^{2}\left(\Delta x\right)^{2}\right)\\
+			+\left(a^{2}+2\cdot3a\Delta x+3^{2}\left(\Delta x\right)^{2}\right)\\
+			+\ldots\\
+			\left.+\left(a^{2}+2\cdot(n-1)a\Delta x+(n-1)^{2}\left(\Delta x\right)^{2}\right)\right)\\
+			=\frac{1}{3}\left(b^{3}-a^{3}\right)
+		\end{multline}
+	\end{alertblock}
+\end{frame}
+
+\begin{frame}{算法(pseudocode)}
+\begin{algorithm}[H]
+	\SetAlgoLined
+	\KwResult{写出算法的结果}
+	初始化变量\;
+	\While{条件}{
+		执行一些处理\;
+		\If{满足某条件}{
+			做一些事情\;
+		}
+	}
+	\caption{示例算法}
+\end{algorithm}
+\end{frame}
+
+\section{应用与结果分析}
+\begin{frame}{模型}
+	\begin{itemize}
+		\item \LaTeX 广泛用于学术界，期刊会议论文模板
+	\end{itemize}
+	%% 表格演示
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{c|c}
+			Microsoft\textsuperscript{\textregistered}  Word & \LaTeX \\
+			\hline
+			文字处理工具 & 专业排版软件 \\
+			容易上手，简单直观 & 容易上手 \\
+			所见即所得 & 所见即所想，所想即所得 \\
+			高级功能不易掌握 & 进阶难，但一般用不到 \\
+			处理长文档需要丰富经验 & 和短文档处理基本无异 \\
+			花费大量时间调格式 & 无需担心格式，专心作者内容 \\
+			公式排版差强人意 & 尤其擅长公式排版 \\
+			二进制格式，兼容性差 & 文本文件，易读、稳定 \\
+			付费商业许可 & 自由免费使用 \\
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\section{总结与期望}
+\begin{frame}{总结与期望}
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.45\linewidth]{sysu_big_logo.jpeg}
+		\caption{图片实例}
+		\label{fig:1}
+	\end{figure}
+\end{frame}
+
+\section{参考文献}
+\begin{frame}[allowframebreaks]{参考文献}
+	\bibliographystyle{acm} 
+	\nocite{*} 
+	\bibliography{reference}
+\end{frame}
+
+\beamertemplateshadingbackground{structure.fg!90}{structure.fg}
+\begin{frame}[plain]
+	\vfill
+	\centering
+	{
+		\centering \Huge \color{white} Thank you for your attention!\\[10pt]Q\&A
+	}
+	\vfill
+\end{frame}
+
+
+
+
+\end{document}
+
+

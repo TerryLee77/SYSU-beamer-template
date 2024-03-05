@@ -1,0 +1,9 @@
+\begin{thebibliography}{1}
+
+\bibitem{vaswani2017attention}
+{\sc Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez,
+  A.~N., Kaiser, {\L}., and Polosukhin, I.}
+\newblock Attention is all you need.
+\newblock {\em Advances in neural information processing systems 30\/} (2017).
+
+\end{thebibliography}
