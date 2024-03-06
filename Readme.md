@@ -4,7 +4,7 @@ An unofficial beamer template for Sun Yat-sen University modified from [SYSU Bea
 
 ### Build
 
-Compile wit `Xelatex`. Available in Overleaf and texlive.
+Compile wit `Xelatex`. Available in [Overleaf](https://www.overleaf.com/latex/templates/sysu-beamer-template/mjfndzzfcfhn) and texlive.
 
 ### Screen Shoot
 
